@@ -14,7 +14,9 @@ Sinta-se livre para clonar e usar o código como quiser.
 
 ```
 cmd/api
-    main.go # lança a aplicação
+    main.go # lança server http
+cmd/preprocessor
+    main.go # pre processamento do references.json.gz
 internal/
     handler/ # handlers http da aplicação
         dto/ # modelos de requisição e resposta http
@@ -23,4 +25,19 @@ internal/
     repository/ # camada de persistência
 pkg/ # lib criadas pro projeto
     vector/ # lib com funções reusáveis para vetores
+    env/ # lib para ler env vars
 assets/ # recursos adicionais    
+```
+
+## Requisitos
+
+### Funcionais
+
+- API que determina se uma transação é uma fraude ou não, baseado em dados de referência pré-determinados e pré-compilados.
+- API que determina o estado da aplicação.
+
+### Não funcionais
+
+- Load Balancer.
+- Número mínimo de replicas (2).
+

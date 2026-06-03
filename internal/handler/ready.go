@@ -1,21 +1,23 @@
 package handler
 
 import (
-	"encoding/json"
 	"net/http"
 
-	"github.com/Fotkurz/rinha-de-backend-2026-go/internal/ready"
+	"github.com/Fotkurz/rinha-de-backend-2026-go/internal/config"
 )
 
-type ReadyResponse struct {
-	Status bool `json:"status"`
+type Ready struct {
 }
 
-func Ready(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
-	status := ReadyResponse{Status: ready.IsReady()}
+func NewReadyHandler() Ready {
+	return Ready{}
+}
 
-	json.NewEncoder(w).Encode(status)
+func (h Ready) IsReady(w http.ResponseWriter, r *http.Request) {
+	if config.Instance().IsReady {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
 
-	ready.ToggleReady()
+	w.WriteHeader(http.StatusServiceUnavailable)
 }

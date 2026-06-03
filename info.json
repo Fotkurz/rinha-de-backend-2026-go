@@ -1,0 +1,7 @@
+{
+    "participants": ["Guilherme Paulo"],
+    "social": ["https://github.com/ja/", "https://www.linkedin.com/in/anazan"],
+    "source-code-repo": "https://github.com/Fotkurz/rinha-backend-2026-go",
+    "stack": ["go", "postgres", "nginx", "redis"],
+    "open_to_work": true
+}

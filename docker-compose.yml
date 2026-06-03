@@ -1,0 +1,17 @@
+# Resource constraint: 1 CPU e 350 MB de memória.
+services:
+
+  # api:
+  #   ports:
+  #     - "9999:9999"
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: "0.15"
+  #         memory: "42MB"
+  
+  # TODO: remove in prd
+
+networks:
+  rinha:
+    driver: bridge
